@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trist\\Documents\\Personal\\AngularPriorityListToDo\\PriorityBasedToDoList\\Backend\\Backend.csproj": {}
+    "C:\\Users\\trist\\Documents\\Personal\\PriorityBasedToDoList\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trist\\Documents\\Personal\\AngularPriorityListToDo\\PriorityBasedToDoList\\Backend\\Backend.csproj": {
+    "C:\\Users\\trist\\Documents\\Personal\\PriorityBasedToDoList\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trist\\Documents\\Personal\\AngularPriorityListToDo\\PriorityBasedToDoList\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\trist\\Documents\\Personal\\PriorityBasedToDoList\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\trist\\Documents\\Personal\\AngularPriorityListToDo\\PriorityBasedToDoList\\Backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\trist\\Documents\\Personal\\PriorityBasedToDoList\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\trist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trist\\Documents\\Personal\\AngularPriorityListToDo\\PriorityBasedToDoList\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\trist\\Documents\\Personal\\PriorityBasedToDoList\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\trist\\AppData\\Roaming\\NuGet\\NuGet.Config",

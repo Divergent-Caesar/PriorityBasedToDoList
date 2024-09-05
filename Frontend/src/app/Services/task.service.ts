@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
-  private apiUrl = 'http://localhost:5294/';
+  private apiUrl = 'http://localhost:5024/';
 
   constructor(private http: HttpClient) { }
 
   getTasks() : Observable<string> {
-    return this.http.get<string>(this.apiUrl +"api/tasks/get", {});
+    return this.http.get<string>(this.apiUrl +"task/getAll", {});
   }
   createTask(taskDescription: string, estimateInHours: number, subject: string): Observable<void> {
     // Construct the query parameters

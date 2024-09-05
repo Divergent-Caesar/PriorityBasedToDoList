@@ -1,5 +1,4 @@
-![Angular](https://img.shields.io/badge/Angular-v%20latest-DD0031?style=for-the-badge&logo=angular&logoColor=white)
-![Electron](https://img.shields.io/github/package-json/dependency-version/electron/electron?color=47848F&label=Electron&logo=electron&style=for-the-badge)
+![Angular](https://img.shields.io/badge/Angular-v%2018.2.3-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Electron](https://img.shields.io/badge/Electron-v%2032.0.2-DD0250?style=for-the-badge&logo=electron&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-v%20latest-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-v%20latest-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET%20Web%20API%20AoT-v%20latest-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET%20Web%20API%20AoT-v%208.0.300-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)

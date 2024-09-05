@@ -1,45 +1,25 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
+using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-{
-    builder.Services.AddCors(options => {
-        options.AddPolicy("AllowAngularApp",
-            policy => policy.WithOrigins("http://localhost:4200")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod());
-    });
 
-    builder.Services.AddScoped<TaskManagerInterface, TaskManager>();
+builder.Services.AddScoped<IMyService, MyService>();
+builder.Services.AddSingleton<MongoConnection>(); // Register as a singleton or scoped based on your needs
+builder.Services.AddScoped<TaskManager>();
 
-    builder.Services.AddAuthorization();
-    
-}
+builder.Services.AddControllers(); // Add other services as needed
+builder.Services.AddAuthorization(); // Register authorization services
+
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
 {
-    app.UseCors("AllowAngularApp");
-    // Map basic endpoints
-    app.UseAuthorization();
-    app.MapPost("/api/tasks/create", async (TaskManagerInterface taskManager, string taskDescription, int estimateInHours, string subject) =>
-    {
-        await taskManager.CreateTask(taskDescription, estimateInHours, subject);
-        return Results.Ok();
-    });
+    app.UseDeveloperExceptionPage();
+}
 
-    app.MapGet("/api/tasks/get", async (TaskManagerInterface taskManager) =>
-    {
-        await taskManager.GetTasksAsync();
-        return Results.Ok();
-    });
+app.UseAuthorization();
 
-    app.MapDelete("/api/tasks/remove", async (TaskManagerInterface taskManager, string taskDescription) =>
-    {
-        await taskManager.RemoveTask(taskDescription);
-        return Results.Ok();
-    });
+app.MapControllers();
 
-        app.MapGet("/", () => "Hello, World!"); // Basic route for testing
-    }
-
+app.UseHttpsRedirection();
 
 app.Run();

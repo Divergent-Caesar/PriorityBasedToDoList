@@ -1,9 +1,10 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 
-class MongoConnection
+public class MongoConnection
 {
     private const string ConnectionString = "mongodb://localhost:27017"; // Replace with your MongoDB URI
 
@@ -29,14 +30,25 @@ class MongoConnection
         Console.WriteLine("Task Inserted Successfully");
     }
 
-    public async Task fetchTasksAsync()
+    public async Task<string> fetchTasksAsync()
     {
         var tasks = await _tasksCollection.Find(new BsonDocument()).ToListAsync();
-
+        var result = new List<Tasks>();
         foreach (var task in tasks)
         {
-            Console.WriteLine(task["Subject"] + "\n" + task["TaskDescription"] + "\n" + task["EstimateInHours"]);
+            var temp = new Tasks
+            {
+                _subject = task["Subject"].AsString,
+                _taskDescription = task["TaskDescription"].AsString,
+                _timeEstimate = task["EstimateInHours"].AsInt32
+            };
+            result.Add(temp);
         }
+
+        var jsonOptions = new JsonSerializerOptions { WriteIndented = true };
+        string jsonString = JsonSerializer.Serialize(result, jsonOptions);
+
+        return jsonString;
     }
 
     public async Task deleteTask(String taskDescription)
@@ -45,4 +57,11 @@ class MongoConnection
         Console.WriteLine("Task Deleted Successfully");
     }
 
+}
+
+internal class Tasks
+{
+    public string _taskDescription { get; set; }
+    public string _subject { get; set; }
+    public int _timeEstimate { get; set; }
 }

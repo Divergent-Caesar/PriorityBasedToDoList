@@ -2,11 +2,22 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TaskService } from './Services/task.service';
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import { ButtonComponent } from './Components/Atoms/button/button.component';
+import { InputFieldComponent } from './Components/Molecules/input-field/input-field.component';
+import { SearchBarComponent } from './Components/Organisms/search-bar/search-bar.component';
+import { MainLayoutComponent } from './Components/Templates/main-layout/main-layout.component';
+import { HomeComponent } from './Pages/home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,
+    ButtonComponent, 
+    InputFieldComponent, 
+    SearchBarComponent, 
+    MainLayoutComponent,
+    HomeComponent,
+  ],
   providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

@@ -2,6 +2,11 @@ using Backend.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5000); // Replace 5000 with your desired port number
+});
+
 builder.Services.AddScoped<IMyService, MyService>();
 builder.Services.AddSingleton<MongoConnection>(); // Register as a singleton or scoped based on your needs
 builder.Services.AddScoped<TaskManager>();

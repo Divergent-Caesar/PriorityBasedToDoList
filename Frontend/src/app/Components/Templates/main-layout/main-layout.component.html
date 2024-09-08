@@ -1,9 +1,24 @@
 <!-- src/app/templates/main-layout/main-layout.component.html -->
 <header>
-    <app-search-bar></app-search-bar>
-  </header>
-  <main>
-    <ng-content></ng-content>
-  </main>
-  <footer>Footer content</footer>
+    <app-search-bar>
+        
+    </app-search-bar>
+</header>
+<main>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-auto fixed-width bg-dark text-white">
+                Fixed Width Col
+            </div>
+            <div class = "col-md">
+                Content Column
+                <ng-content>
+
+                </ng-content>
+            </div>
+        </div>
+    </div>
+    
+</main>
+<footer>Footer content</footer>
   
